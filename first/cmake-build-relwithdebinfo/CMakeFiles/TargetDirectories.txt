@@ -1,3 +1,0 @@
-/home/ilya/CLionProjects/kuznecov_summer/first/cmake-build-relwithdebinfo/CMakeFiles/first.dir
-/home/ilya/CLionProjects/kuznecov_summer/first/cmake-build-relwithdebinfo/CMakeFiles/edit_cache.dir
-/home/ilya/CLionProjects/kuznecov_summer/first/cmake-build-relwithdebinfo/CMakeFiles/rebuild_cache.dir
