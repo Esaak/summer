@@ -1,0 +1,3 @@
+/home/ilya/CLionProjects/kuznecov_summer/third/cmake-build-debug/CMakeFiles/third.dir
+/home/ilya/CLionProjects/kuznecov_summer/third/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/ilya/CLionProjects/kuznecov_summer/third/cmake-build-debug/CMakeFiles/rebuild_cache.dir
