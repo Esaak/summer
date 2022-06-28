@@ -1,3 +1,0 @@
-/home/ilya/CLionProjects/kuznecov_summer/second/cmake-build-release/CMakeFiles/second.dir
-/home/ilya/CLionProjects/kuznecov_summer/second/cmake-build-release/CMakeFiles/edit_cache.dir
-/home/ilya/CLionProjects/kuznecov_summer/second/cmake-build-release/CMakeFiles/rebuild_cache.dir
