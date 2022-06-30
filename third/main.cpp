@@ -52,6 +52,18 @@ public:
         for(unsigned i=0;i<N;i++){
             answ+=coordinates[i]*coordinates[i]-v2.coordinates[i]*v2.coordinates[i];
         }
+        if(answ<0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    bool operator <= (Vector_G<T,N> const &v2){
+        long answ=0;
+        for(unsigned i=0;i<N;i++){
+            answ+=coordinates[i]*coordinates[i]-v2.coordinates[i]*v2.coordinates[i];
+        }
         if(answ<=0){
             return true;
         }
@@ -60,7 +72,10 @@ public:
         }
     }
     bool operator>(Vector_G<T,N> const &v2){
-        return !(*this<v2);
+        return !(*this <= v2);
+    }
+    bool operator >=(Vector_G<T,N> const &v2){
+        return !(*this< v2);
     }
     Vector_G<T,N>& operator= (const Vector_G<T,N> &v2){
         if(this == &v2){
@@ -116,7 +131,20 @@ public:
         return *this;
     }
     bool operator<(Vector_G const &v2){
-        assert(capacity==v2.capacity);
+        assert(v2.capacity==capacity);
+        long answ=0;
+        for(unsigned i=0;i<v2.capacity;i++){
+            answ+=coordinates[i]*coordinates[i]-v2.coordinates[i]*v2.coordinates[i];
+        }
+        if(answ<0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+    bool operator <= (Vector_G const &v2){
+        assert(v2.capacity==capacity);
         long answ=0;
         for(unsigned i=0;i<v2.capacity;i++){
             answ+=coordinates[i]*coordinates[i]-v2.coordinates[i]*v2.coordinates[i];
@@ -129,8 +157,15 @@ public:
         }
     }
     bool operator>(Vector_G const &v2){
-        return !*this<v2;
+        return !(*this <= v2);
     }
+    bool operator >=(Vector_G const &v2){
+        return !(*this< v2);
+    }
+
+
+
+
     Vector_G& operator= (const Vector_G &v2){
         if(this == &v2){
             return *this;
@@ -161,9 +196,10 @@ int main() {
     a.f(4);
     a.print();
     Vector_G<int, -1> b(5, 2);
+    Vector_G<int, -1> b1(5, 2);
     b.print();
     Vector_G<int, 5>sum ;
-    bool flag = a1>a;
+    bool flag = b1<=b;
     std::cout<<"\n"<<flag<<"\n";
     sum.print();
     return 0;
