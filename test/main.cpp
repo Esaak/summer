@@ -1,22 +1,35 @@
 #include <iostream>
-template<typename T, int N>
-struct A{
-      void foo(){
-          std::cout<<1;
-      }
-};
+#include <algorithm>
+#include <array>
+#include <string>
+#include <numeric>
+#include <vector>
+#include <type_traits>
 template<typename T>
-struct A <T, -1>{
+concept UnsignedWith = requires(T&&x) {{x+1}->std::same_as<unsigned >;};
+template<UnsignedWith P>
+struct A{
     void foo(){
-        std::cout<<2;
+        P a=6;
+        std::cout<<a;
     }
 };
-template<typename T>
-struct A <T, typename U>{
-
-};
+/*
+template <typename Type>
+concept Vector_type = requires(Type P) {{P}->std::convertible_to<int>;};
+template<Vector_type T>
+struct A{
+    void foo(){
+        std::cout<<1;
+    }
+};*/
 int main() {
-    A<int,-1>a;
-    a.foo();
+
+    //std::string a = "ass";
+    //static_cast<int>(a);
+    //A<std::string> b;
+    //b.foo();
+    A<-5>c;
+    c.foo();
     return 0;
 }

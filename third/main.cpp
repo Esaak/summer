@@ -26,7 +26,7 @@ public:
         std::cout<<"\n";
     }
 
-    Vector_G<T,N> operator+(Vector_G<T,N> const &v2){
+    Vector_G<T,N> operator+(Vector_G const &v2){
         Vector_G<T,N> new_v;
         for(unsigned i=0; i<N;i++){
             new_v.coordinates[i] = coordinates[i]+v2.coordinates[i];
@@ -86,6 +86,7 @@ public:
     }
 
 };
+
 template<typename T>
 class Vector_G<T, -1>{
 private:
@@ -197,10 +198,11 @@ int main() {
     a.print();
     Vector_G<int, -1> b(5, 2);
     Vector_G<int, -1> b1(5, 2);
-    b.print();
+    Vector_G<int, -1> b2(5,2);
+    b2 = b1+a;
     Vector_G<int, 5>sum ;
-    bool flag = b1<=b;
-    std::cout<<"\n"<<flag<<"\n";
+    b2.print();
+
     sum.print();
     return 0;
 }
